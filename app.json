@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Hamro Safety",
+    "slug": "hamro-safety",
+    "scheme": "hamrosafety",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B1220"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.hamrosafety.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Hamro Safety needs your location to share it with emergency services and your trusted contacts during an SOS.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Hamro Safety can share your live location with trusted contacts during an active emergency, even when the app is in the background.",
+        "UIBackgroundModes": ["location", "remote-notification"]
+      }
+    },
+    "android": {
+      "package": "com.hamrosafety.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B1220"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "CALL_PHONE",
+        "RECEIVE_BOOT_COMPLETED",
+        "POST_NOTIFICATIONS"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Hamro Safety uses your location to send accurate emergency alerts to your trusted contacts."
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "extra": {
+      "router": { "origin": false }
+    }
+  }
+}
